@@ -2,6 +2,20 @@
 // И заменить их элементы на их квадраты 
 
 // 1) создаем массив
+
+void ChangeElementsToSquare(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            if (i % 2 == 0 && j % 2 == 0)
+            {
+                arr[i, j] = arr[i, j] * arr[i, j]; // умножение с накоплением, умножение на себя
+            }
+        }
+    }
+}
 void FillArray(int[,] arr)
 {
     Random rnd = new Random();
@@ -24,19 +38,6 @@ void PrintArray(int[,] arr)
         Console.WriteLine();
     }
 }
-void ChangeElementsToSquare(int[,] arr)
-{
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; i < arr.GetLength(1); i++)
-        {
-            if (i % 2 == 0 & j % 2 == 0)
-            {
-                arr[i, j] *= arr[i, j]; // умножение с накоплением, умножение на себя
-            }
-        }
-    }
-}
 
 int rowCount = 3;
 int columnCount = 4;
@@ -48,3 +49,7 @@ Console.WriteLine();
 ChangeElementsToSquare(array);
 PrintArray(array);
 
+// int a = 5;
+// int b = 6;
+// int c = a & b;
+// Console.WriteLine(c);
