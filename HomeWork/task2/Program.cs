@@ -5,7 +5,7 @@
 void FillArray(int[,] arr)
 {
     Random rnd = new Random();
-        for (int i = 0; i < arr.GetLength(0); i++)
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
@@ -28,14 +28,21 @@ void PrintArray(int[,] arr)
 }
 void ShowElementIfExist(int[,] arr, int row, int column)
 {
-    if (row <= arr.GetLength(0) & column <= arr.GetLength(1))
+    if (row > 0 & column > 0)
     {
-        Console.WriteLine("Искомый элемент: " + 
-        (arr[arr.GetLength(0) - 1, arr.GetLength(1) - 1]));
+        if (row <= arr.GetLength(0) & column <= arr.GetLength(1))
+        {
+            Console.WriteLine("Искомый элемент: " +
+            (arr[arr.GetLength(0) - 1, arr.GetLength(1) - 1]));
+        }
+        else
+        {
+            Console.WriteLine("Такого числа в массиве нет");
+        }
     }
     else
     {
-        Console.WriteLine("Такого числа в массиве нет");
+        Console.WriteLine("Введен отрицательный индекс элемента");
     }
 }
 
