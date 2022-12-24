@@ -33,7 +33,7 @@ void ShowElementIfExist(int[,] arr, int row, int column)
         if (row <= arr.GetLength(0) & column <= arr.GetLength(1))
         {
             Console.WriteLine("Искомый элемент: " +
-            (arr[arr.GetLength(0) - 1, arr.GetLength(1) - 1]));
+            (arr[row - 1, column - 1]));
         }
         else
         {
