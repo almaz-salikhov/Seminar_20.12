@@ -41,13 +41,13 @@ FillArray(array);
 PrintArray(array);
 Console.WriteLine();
 
-int[] arrayAvg = new int[array.GetLength(1)];
+double[] arrayAvg = new double[array.GetLength(1)];
 int k = 0;
 
 for (int j = 0; j < array.GetLength(1); j++)
 {
     int countOfPalindrom = 0;
-    int sum = 0; // сумма палиндромов 
+    double sum = 0; // сумма палиндромов 
 
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -66,8 +66,8 @@ for (int j = 0; j < array.GetLength(1); j++)
     }
     else
     {
-        arrayAvg[k] = sum / countOfPalindrom;
+        arrayAvg[k] = Math.Round(sum / countOfPalindrom, 1);
         k++;
     }
 }
-Console.WriteLine(string.Join(", ", arrayAvg));
+Console.WriteLine(string.Join(" - ", arrayAvg));
