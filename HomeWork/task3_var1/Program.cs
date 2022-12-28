@@ -20,7 +20,6 @@ void FillArray(int[,] arr) // Fill array with random 3-digit numbers
         {
             arr[i, j] = rnd.Next(100, 999);
         }
-        Console.WriteLine();
     }
 }
 
@@ -33,6 +32,17 @@ void PrintArray(int[,] arr) // Showing array
             Console.Write(arr[i, j] + " ");
         }
         Console.WriteLine();
+    }
+}
+
+bool IsPalindromNumber(int N)
+{
+    int one = N / 100;
+    int three = N % 10;
+    if(one == three) return true;
+    else
+    {
+        return false;
     }
 }
 
@@ -51,9 +61,7 @@ for (int j = 0; j < array.GetLength(1); j++)
 
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        int one = array[i, j] / 100;
-        int three = array[i, j] % 10;
-        if (one == three) // проверяем, является ли оно палиндромом
+        if (IsPalindromNumber((array[i, j]))) // проверяем, является ли оно палиндромом
         {
             sum = sum + array[i, j];
             countOfPalindrom++;
@@ -62,12 +70,11 @@ for (int j = 0; j < array.GetLength(1); j++)
     if (countOfPalindrom == 0)
     {
         arrayAvg[k] = 0;
-        k++;
     }
     else
     {
         arrayAvg[k] = Math.Round(sum / countOfPalindrom, 1);
-        k++;
     }
+    k++;
 }
 Console.WriteLine(string.Join(" - ", arrayAvg));
