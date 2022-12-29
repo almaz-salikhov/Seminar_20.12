@@ -67,14 +67,7 @@ for (int j = 0; j < array.GetLength(1); j++)
             countOfPalindrom++;
         }
     }
-    if (countOfPalindrom == 0)
-    {
-        arrayAvg[k] = 0;
-    }
-    else
-    {
-        arrayAvg[k] = Math.Round(sum / countOfPalindrom, 1);
-    }
+    arrayAvg[k] = (countOfPalindrom == 0) ? 0 : Math.Round(sum / countOfPalindrom, 1);
     k++;
 }
-Console.WriteLine(string.Join(" - ", arrayAvg));
+Console.WriteLine(string.Join(" | ", arrayAvg));
